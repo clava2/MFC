@@ -62,12 +62,10 @@ void CMapEditorView::OnDraw(CDC* /*pDC*/)
 
 	Graphics graphics(this->GetSafeHwnd());
 
-	GraphicsPath path;
-	path.AddEllipse(20, 20, 20, 20);
-	path.AddLine(20, 20, 100, 100);
-	Pen pen(Color(255, 255, 0, 0));
+	Image image(L"Texture.jpg");
+	TextureBrush brush(&image);
 
-	graphics.DrawPath(&pen,&path);
+	graphics.FillEllipse(&brush,0,0,500,500);
 
 }
 
