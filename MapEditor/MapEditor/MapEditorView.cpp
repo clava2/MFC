@@ -61,13 +61,13 @@ void CMapEditorView::OnDraw(CDC* /*pDC*/)
 
 
 	Graphics graphics(this->GetSafeHwnd());
-	SolidBrush brush(Color(255, 0, 0, 255));
-	FontFamily fontFamily(L"Times New Roman");
-	Gdiplus::Font font(&fontFamily, 24, FontStyleRegular, UnitPixel);
-	PointF point(50, 50);
 
-	graphics.DrawString(L"Hello World", -1, &font, point, &brush);
+	GraphicsPath path;
+	path.AddEllipse(20, 20, 20, 20);
+	path.AddLine(20, 20, 100, 100);
+	Pen pen(Color(255, 255, 0, 0));
 
+	graphics.DrawPath(&pen,&path);
 
 }
 
